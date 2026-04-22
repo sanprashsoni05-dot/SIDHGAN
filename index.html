@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIDHGAN JEWELLERS | Hallmark Kundan, Jadau, Modern & Traditional</title>
+  <meta name="description" content="SIDHGAN JEWELLERS - Hallmark jewellery specialists in Kundan, Jadau, modern and traditional jewellery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="SIDHGAN JEWELLERS home">
+        <img src="assets/logo.png" alt="SIDHGAN JEWELLERS logo" class="brand-logo" onerror="this.style.display='none'" />
+        <div>
+          <p class="brand-name">SIDHGAN JEWELLERS</p>
+          <small>Hallmark Purity. Timeless Elegance.</small>
+        </div>
+      </a>
+      <nav>
+        <a href="#catalog">Catalogue</a>
+        <a href="#about">About</a>
+        <a href="#manage">Manage Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">Premium Hallmark Jewellery Studio</span>
+        <h1>Kundan, Jadau, Modern & Traditional Jewellery — All in One Destination</h1>
+        <p>
+          Welcome to <strong>SIDHGAN JEWELLERS</strong>. We craft and curate hallmark jewellery with premium finishing and elegant design language for wedding, festive, and daily luxury collections.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" id="heroWhatsapp" href="#">WhatsApp Inquiry</a>
+          <a class="btn btn-secondary" id="heroCall" href="#">Call Now</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Why Customers Choose Us</h3>
+        <ul>
+          <li>✅ Assured Hallmark Jewellery</li>
+          <li>✅ Kundan + Jadau Specialists</li>
+          <li>✅ Modern & Traditional Variety</li>
+          <li>✅ Fast WhatsApp Response</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="catalog" class="section container">
+      <div class="section-head">
+        <h2>Featured Collections</h2>
+        <input id="searchInput" type="search" placeholder="Search: kundan, ring, bridal..." aria-label="Search products" />
+      </div>
+      <div class="filters" id="categoryFilters"></div>
+      <div id="productGrid" class="grid"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div>
+          <h2>About SIDHGAN JEWELLERS</h2>
+          <p>
+            We deal in <strong>hallmark jewellery</strong> and provide design collections in <strong>Kundan, Jadau, modern, and traditional</strong> styles. Our focus is high craftsmanship, trust, and customer-friendly service.
+          </p>
+          <p>
+            Whether you want wedding bridal sets, festive wear, statement necklaces, or lightweight daily pieces, our catalogue is updated with latest trends and premium finish quality.
+          </p>
+        </div>
+        <div class="about-stats">
+          <article><h3 id="statProducts">0+</h3><p>Products Listed</p></article>
+          <article><h3>100%</h3><p>Hallmark Focus</p></article>
+          <article><h3>4 Styles</h3><p>Kundan • Jadau • Modern • Traditional</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="manage" class="section container">
+      <h2>Manage Products (Blogger-Friendly)</h2>
+      <p class="manage-note">
+        Add products directly from here. Data is saved in your browser (LocalStorage). You can export JSON and embed it in Blogger widget/script.
+      </p>
+
+      <div class="manage-grid">
+        <form id="productForm" class="card">
+          <h3>Add New Product</h3>
+          <label>Product Name<input required name="name" /></label>
+          <label>Category
+            <select required name="category">
+              <option value="Kundan">Kundan</option>
+              <option value="Jadau">Jadau</option>
+              <option value="Modern">Modern</option>
+              <option value="Traditional">Traditional</option>
+            </select>
+          </label>
+          <label>Price (INR)<input required name="price" type="number" min="1" /></label>
+          <label>Image URL<input required name="image" type="url" placeholder="https://..." /></label>
+          <label>Description<textarea required name="description" rows="3"></textarea></label>
+          <button class="btn btn-primary" type="submit">Add Product</button>
+        </form>
+
+        <div class="card">
+          <h3>Blogger Tools</h3>
+          <p>Use these to move product data into Blogger posts/pages/widgets.</p>
+          <div class="tool-actions">
+            <button id="exportJson" class="btn btn-secondary">Export Products JSON</button>
+            <button id="copyJson" class="btn btn-secondary">Copy JSON</button>
+            <button id="resetProducts" class="btn btn-danger">Reset to Default</button>
+          </div>
+          <textarea id="jsonOutput" rows="9" readonly></textarea>
+          <details>
+            <summary>How to use in Blogger?</summary>
+            <ol>
+              <li>Export JSON and copy it.</li>
+              <li>Create a new page/post in Blogger and switch to HTML view.</li>
+              <li>Paste JSON inside a <code>&lt;script type="application/json" id="sidhgan-data"&gt;</code> tag.</li>
+              <li>Use this same HTML/CSS/JS in Blogger theme gadget or page to render live products.</li>
+            </ol>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-box">
+        <h2>Quick Inquiry & Order Assistance</h2>
+        <p>Customer can contact instantly for product inquiry, custom order, and pricing.</p>
+        <div class="contact-actions">
+          <a id="contactWhatsapp" class="btn btn-primary" href="#">Chat on WhatsApp</a>
+          <a id="contactCall" class="btn btn-secondary" href="#">Call Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <p>© <span id="year"></span> SIDHGAN JEWELLERS. All rights reserved.</p>
+      <p>Hallmark • Kundan • Jadau • Modern • Traditional</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
