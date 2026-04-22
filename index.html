@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIDHGAN JEWELLERS | Hallmark Kundan, Jadau, Modern & Traditional</title>
+  <meta name="description" content="SIDHGAN JEWELLERS - Hallmark jewellery specialist in Kundan, Jadau, Modern and Traditional collections. WhatsApp inquiry enabled ecommerce-style showcase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img id="brandLogo" src="assets/logo-sidhgan.svg" alt="SIDHGAN JEWELLERS Logo" />
+      <div>
+        <h1>SIDHGAN JEWELLERS</h1>
+        <p>Hallmark Jewellery • Kundan • Jadau • Modern • Traditional</p>
+      </div>
+    </div>
+    <div class="quick-actions">
+      <a class="btn primary" id="whatsappMain" href="#" target="_blank" rel="noopener">WhatsApp Inquiry</a>
+      <a class="btn secondary" href="tel:+919999999999">Call Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Premium Hallmark Jewellery Studio</h2>
+      <p>
+        Hum hallmark certified jewellery banate hain. Kundan Jadau, modern aur traditional dono styles mein curated collections available hain.
+      </p>
+      <div class="hero-cta">
+        <button class="btn primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">Shop Collection</button>
+        <button class="btn ghost" onclick="document.getElementById('firm-details').scrollIntoView({behavior:'smooth'})">About Firm</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div><strong>100%</strong><span>Hallmark Focus</span></div>
+      <div><strong>4+</strong><span>Jewellery Segments</span></div>
+      <div><strong>24x7</strong><span>WhatsApp Inquiry</span></div>
+    </div>
+  </section>
+
+  <section class="controls" id="catalog">
+    <input type="search" id="searchBox" placeholder="Product search karein..." />
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Kundan">Kundan</option>
+      <option value="Jadau">Jadau</option>
+      <option value="Modern">Modern</option>
+      <option value="Traditional">Traditional</option>
+    </select>
+    <button class="btn secondary" id="resetFilters">Reset</button>
+  </section>
+
+  <main>
+    <section>
+      <h3>Featured Products</h3>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section class="admin-panel">
+      <h3>Product Manager (Blogger Friendly)</h3>
+      <p>Yahaan se aap naya product add kar sakte ho. Data localStorage mein save hota hai aur JSON export karke Blogger post/page mein embed kar sakte ho.</p>
+      <form id="productForm">
+        <input required id="pName" placeholder="Product Name" />
+        <input required id="pPrice" placeholder="Price (e.g. ₹1,25,000)" />
+        <input required id="pImage" placeholder="Image URL / path (e.g. images/kundan-set.jpg)" />
+        <select id="pCategory" required>
+          <option value="Kundan">Kundan</option>
+          <option value="Jadau">Jadau</option>
+          <option value="Modern">Modern</option>
+          <option value="Traditional">Traditional</option>
+        </select>
+        <textarea id="pDesc" rows="3" placeholder="Short Description"></textarea>
+        <button class="btn primary" type="submit">Add Product</button>
+      </form>
+      <div class="admin-actions">
+        <button class="btn secondary" id="exportJson">Export Products JSON</button>
+        <label class="btn ghost" for="importJson">Import JSON</label>
+        <input id="importJson" type="file" accept="application/json" hidden />
+      </div>
+      <textarea id="jsonOutput" rows="8" placeholder="Exported JSON yahan dikhega..."></textarea>
+      <details>
+        <summary>Blogger Integration Tips</summary>
+        <ol>
+          <li>Export JSON copy karein.</li>
+          <li>Blogger me naya page/post open karein.</li>
+          <li>HTML view me script.js ka product array replace karein ya JSON ko script tag me attach karein.</li>
+          <li>Images ke URLs Blogger image links ya Drive CDN links rakhein.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section id="firm-details" class="firm-details">
+      <h3>Firm Details</h3>
+      <ul>
+        <li><strong>Brand:</strong> SIDHGAN JEWELLERS</li>
+        <li><strong>Specialization:</strong> Hallmark Jewellery</li>
+        <li><strong>Product Lines:</strong> Kundan, Jadau, Modern, Traditional</li>
+        <li><strong>Inquiry Channels:</strong> WhatsApp, Call, Product Inquiry Buttons</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> SIDHGAN JEWELLERS • All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
